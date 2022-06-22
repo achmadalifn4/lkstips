@@ -1,0 +1,6 @@
+openssl genrsa -des3 -out ca.key 2048
+openssl req -x509 -new -nodes -key ca.key -sha256 -days 365 -out ca.pem
+openssl crl2pkcs7 -nocrl -certfile ca.pem -out ca.p7b
+openssl genrsa -out domain.key 2048
+openssl req -new -key domain.key -out domain.csr
+openssl x509 -req -in domain.csr -CA ca.pem -CAkey ca.key -CAcreateserial -out domain.crt -days 365 -sha256 -extfile config.txt
