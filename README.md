@@ -19,3 +19,16 @@ openssl genrsa -out domain.key 2048
 openssl req -new -key domain.key -out domain.csr
 openssl x509 -req -in domain.csr -CA ca.pem -CAkey ca.key -CAcreateserial -out domain.crt -days 365 -sha256 -extfile config.txt
 ```
+
+# Membuat user otomatis
+for i in {1..100}; do useradd user$i -s /bin/bash -m; passwd user$i <<< "p@ssword"$'\n'"p@ssword"; done
+
+# Mereplace dan menambahkan text dengan `sed`
+#### Mereplace
+```
+sed -i 's/userdokumen/user'$variable'/g' /etc/apache2/sites-available/web$variable.conf
+```
+#### Menambahkan
+```
+sed -i -e '$awww'$variable'     IN      A       192.168.4.1' /etc/bind/db.ict.or.id
+```
