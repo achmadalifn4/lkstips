@@ -21,7 +21,9 @@ openssl x509 -req -in domain.csr -CA ca.pem -CAkey ca.key -CAcreateserial -out d
 ```
 
 # Membuat user otomatis
+```
 for i in {1..100}; do useradd user$i -s /bin/bash -m; passwd user$i <<< "p@ssword"$'\n'"p@ssword"; done
+```
 
 # Mereplace dan menambahkan text dengan `sed`
 #### Mereplace
