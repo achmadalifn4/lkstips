@@ -1,4 +1,4 @@
-#### Membuat CA dan CSR
+# Membuat CA dan CSR
 Membuat file `config.txt` terlebih dahulu
 ```
 authorityKeyIdentifier=keyid,issuer
